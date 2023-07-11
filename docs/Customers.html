@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Customers</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+   <header>
+        <a href="index.html">
+            <img src="images/TeamLogo.png" alt="NDS Logo" class="iconDetails" tabindex="1">
+        </a>
+        <h1>Manage Customers</h1>
+    </header>
+
+    <ul>
+        <li id="floatright"><a href="index.html" tabindex="4">Home</a></li>
+        <li><a href="Inventory.html" tabindex="2">Inventory</a></li>
+        <li><a href="Orders.html">Orders</a></li>
+        <li><a href="Suppliers.html">Suppliers</a></li>
+        <li><a href="Sales.html">Sales</a></li>
+        <li><a href="Customers.html" class="active">Customers</a></li>
+        <li><a href="Invoices.html">Invoices</a></li>
+    </ul>
+    
+    <div class="addform" id="custForm">
+        <h2>Now it's Easy to maintain your valuable Customers!!</h2>
+        <form method="post" id="customerForm">
+            <fieldset>
+                <legend>Add Customer</legend>
+                <div>
+                    <div class="input-group">
+                        <input class="input" type="text" id="firstname" name="firstname" maxlength="30" required>
+                        <label class="placeholder" for="firstname">Enter your first name for eg.(Daniel)</label>
+                    </div>
+                    
+                    <div class="input-group">
+                        <input class="input" type="text" id="lastname" name="lastname" maxlength="50" required>
+                        <label class="placeholder" for="lastname">Enter your last name for eg.(Riccardo)</label>
+                    </div>
+
+                    <div class="input-group">
+                        <input class="input"  type="tel" id="phone" name="phone" title="Enter the 10 digit phone number" minlength="10" maxlength="10" required>
+                        <label class="placeholder" for="postal">Enter the 10 digit phone number without space for eg. (12894574234)</label>
+                    </div>
+
+                    <div class="input-group">
+                        <input class="input" type="text" id="address" name="address" required>
+                        <label class="placeholder" for="address">Enter Address for eg. (112,Mount St,Welland):</label>
+                    </div>
+                    
+                    <select id="provCode" name="provCode" title="Select 2 letter Province Code for eg.(XX)" required>
+                        <option disabled selected value="default">Select Province Code</option>
+                        <option value="AB">AB</option>
+                        <option value="BC">BC</option>
+                        <option value="MB">MB</option>
+                        <option value="NB">NB</option>
+                        <option value="NL">NL</option>
+                        <option value="NT">NT</option>
+                        <option value="NS">NS</option>
+                        <option value="NU">NU</option>
+                        <option value="ON">ON</option>
+                        <option value="PE">PE</option>
+                        <option value="QC">QC</option>
+                        <option value="SK">SK</option>
+                        <option value="YT">YT</option>
+                    </select>
+
+                    <div class="input-group">
+                        <input class="input" type="text" id="postal" name="postal" title="Please enter postal Code" minlength="7" maxlength="7" pattern="^[A-Za-z]\d[A-Za-z][ ]?\d[A-Za-z]\d$" required>
+                        <label class="placeholder" for="postal">Please enter postal Code for eg.(X1X 1X1)</label>
+                    </div>
+                </div>
+
+                <div class="btnmargin">
+                    <button type="submit" onclick="addCustomer()" title="Submit the data and close the form">Submit and Close</button>
+                    <button type="button" onclick="closeForm()" title="Close the form">Close</button>
+                    <button type="button" class="FillData" onclick="FillData()" title="Autofill data for demo">Fill Data</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    <div id="custDetails" class="detail">
+        <div class="detail-content">
+            <span class="close">&times;</span>
+            <p id="details"></p>
+        </div>
+    </div>
+   
+    <div class="tableformat" id="custTable">
+        <div class="headers">
+            <h2>Customer Details</h2>
+            <button class="openForm" onclick="openForm()" tabindex="6" title="Open Form to Add New Customer">Add Customer</button>
+        </div>
+        <input type="text" id="searchName" onkeyup="searchLastCustomer()" placeholder="Search by Last Name.." title="Enter Customer Last Name" tabindex="7">
+        <input type="text" id="searchPhone" onkeyup="searchPhoneCustomer()" placeholder="Search by Phone.." title="Enter Customer Phone" >
+        <table id="customers" class="format-table">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Phone</th>
+                    <th>Details</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Kevin</td>
+                    <td>Magnussen</td>
+                    <td>1234567890</td>
+                    <td><a onClick="DisplayKevin()">See Details</a></td>
+                    <td><a onClick="editKevin(this)" tabindex="8">Edit</a>
+                        <a onClick="deleteCurrentCustomer(this)" tabindex="9">Delete</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Alex</td>
+                    <td>Albon</td>
+                    <td>5284176391</td>
+                    <td><a onClick="DisplayAlex()">See Details</a></td>
+                    <td><a onClick="editAlex(this)" tabindex="10">Edit</a>
+                        <a onClick="deleteCurrentCustomer(this)" tabindex="11">Delete</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Fernando</td>
+                    <td>Alonso</td>
+                    <td>4176295379</td>
+                    <td><a onClick="DisplayAlonso()">See Details</a></td>
+                    <td><a onClick="editAlonso(this)" tabindex="12">Edit</a>
+                        <a onClick="deleteCurrentCustomer(this)" tabindex="13">Delete</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Zack</td>
+                    <td>Ryder</td>
+                    <td>6359874120</td>
+                    <td><a onClick="DisplayZack()">See Details</a></td>
+                    <td><a onClick="editZack(this)" tabindex="14">Edit</a>
+                        <a onClick="deleteCurrentCustomer(this)" tabindex="15">Delete</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mike</td>
+                    <td>Gabriel</td>
+                    <td>3264127851</td>
+                    <td><a onClick="DisplayMike()">See Details</a></td>
+                    <td><a onClick="editMike(this)" tabindex="16">Edit</a>
+                        <a onClick="deleteCurrentCustomer(this)" tabindex="17">Delete</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Sergio</td>
+                    <td>Parez</td>
+                    <td>9851256524</td>
+                    <td><a onClick="DisplaySergio()">See Details</a></td>
+                    <td><a onClick="editSergio(this)" tabindex="18">Edit</a>
+                        <a onClick="deleteCurrentCustomer(this)" tabindex="19">Delete</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Carlos</td>
+                    <td>Sainz</td>
+                    <td>8567451250</td>
+                    <td><a onClick="DisplayCarlos()">See Details</a></td>
+                    <td><a onClick="editCarlos(this)" tabindex="20">Edit</a>
+                        <a onClick="deleteCurrentCustomer(this)" tabindex="21">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="js/customer.js"></script>
+    <footer>
+        <p><small>Copyright © 2022 | Designed by NIAGARA DIGITAL SOLUTIONS</small></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Inventory</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="images/TeamLogo.png" alt="NDS Logo" class="iconDetails" tabindex="1">
+        </a>
+        <h1>Item Inventory</h1>
+    </header>
+
+    <ul>
+        <li id="floatright"><a href="index.html" tabindex="4">Home</a></li>
+        <li><a href="Inventory.html" class="active" tabindex="2">Inventory</a></li>
+        <li><a href="Orders.html">Orders</a></li>
+        <li><a href="Suppliers.html">Suppliers</a></li>
+        <li><a href="Sales.html">Sales</a></li>
+        <li><a href="Customers.html">Customers</a></li>
+        <li><a href="Invoices.html">Invoices</a></li>
+    </ul>
+
+    <div class="addform" id="inveForm">
+        <h2>Now it's Easy to add new items in your Inventory!!</h2>
+        <form method="post" id="inventoryForm">
+            <fieldset>
+                <legend>Add Item</legend>
+                <div>
+                    <div class="input-group">
+                        <input class="input" type="text" id="name" name="name" required>
+                        <label class="placeholder" for="name">Enter Item Name for eg. (Key,Blade,etc.)</label>
+                    </div>
+
+                    <div class="input-group">
+                        <input class="input" type="number" id="size" name="size" min="1" required>
+                        <label class="placeholder"for="size">Enter the size of the item</label>
+                    </div>
+
+                    <div class="input-group">
+                        <input class="input" type="number" id="qtyperpack" name="qtyperpack" min="1" required>
+                        <label class="placeholder" for="qtyperpack">Enter the quantity per package</label>
+                    </div>
+
+                    <select id="suppliername" name="suppliername">
+                        <option disabled selected value="default">Select Supplier</option>
+                        <option value="Jhonson Co.">Jhonson Co.</option>
+                        <option value="Aramco Co.">Aramco Co.</option>
+                        <option value="MSC Hardwares">MSC Hardwares</option>
+                        <option value="Matrix Parts">Matrix Parts</option>
+                        <option value="Charles Co.">Charles Co.</option>
+                        <option value="Keller Co.">Keller Co.</option>
+                        <option value="Apex Parts">Apex Parts</option>
+                    </select>
+
+                    <label for="or" id="aligncenter">OR</label>
+                    <a href="Suppliers.html"><button id="btnAddSup" type="button" title="Redirect to Supplier Page to Add New Supplier">Add New Supplier</button></a>
+
+                    <div class="input-group">
+                        <input class="input" type="tel" id="upc" name="upc" pattern="[0-9]{10}" required>
+                        <label class="placeholder" for="upc">Enter the items 10 Digit Universal Product Code (UPC or UPC code) for eg. 1234567890</label>
+                    </div>
+                </div>
+                <div class="btnmargin">
+                    <button type="submit" onclick="addItem()" title="Submit the data and close the form">Submit and Close</button>
+                    <button type="button" onclick="closeForm()"  title="Close the form">Close</button>
+                    <button type="button" class="FillData" onclick="FillData()" title="Autofill data for demo">Fill Data</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    <div class="tableformat" id="invTable">
+        <div class="headers">
+            <h2>Inventory Details</h2>
+            <button class="openForm" onclick="openForm()" id="btnOpenForm" tabindex="6" title="Open Form to Add item Customer">Add Item</button>
+        </div>
+        <input type="text" id="searchName" onkeyup="searchItem()" placeholder="Search by Item Name.." title="Enter Item Name" tabindex="7">
+        <table id="inventory" class="format-table">
+            <thead>
+                <tr>
+                    <th>Items</th>
+                    <th>Size</th>
+                    <th>Qty</th>
+                    <th>Supplier</th>
+                    <th>UPC Barcode</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Key</td>
+                    <td>3</td>
+                    <td>10</td>
+                    <td>Jhonson Co.</td>
+                    <td>1234567890</td>
+                    <td><a onClick="editCurrentItem(this)" tabindex="8">Edit</a>
+                        <a onClick="deleteCurrentItem(this)" tabindex="9">Delete</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Blade</td>
+                    <td>6</td>
+                    <td>50</td>
+                    <td>Aramco Co.</td>
+                    <td>2234567890</td>
+                    <td><a onClick="editCurrentItem(this)" tabindex="10">Edit</a>
+                        <a onClick="deleteCurrentItem(this)" tabindex="11">Delete</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Gear</td>
+                    <td>10</td>
+                    <td>100</td>
+                    <td>MSC Hardwares</td>
+                    <td>5644567890</td>
+                    <td><a onClick="editCurrentItem(this)" tabindex="12">Edit</a>
+                        <a onClick="deleteCurrentItem(this)" tabindex="13">Delete</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Fuel Cap</td>
+                    <td>15</td>
+                    <td>20</td>
+                    <td>Matrix Parts</td>
+                    <td>5235215878</td>
+                    <td><a onClick="editCurrentItem(this)" tabindex="14">Edit</a>
+                        <a onClick="deleteCurrentItem(this)" tabindex="15">Delete</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Starter</td>
+                    <td>3</td>
+                    <td>70</td>
+                    <td>Charles Co.</td>
+                    <td>1597534560</td>
+                    <td><a onClick="editCurrentItem(this)" tabindex="16">Edit</a>
+                        <a onClick="deleteCurrentItem(this)" tabindex="17">Delete</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Air Filter</td>
+                    <td>9</td>
+                    <td>40</td>
+                    <td>Keller Co.</td>
+                    <td>7539517530</td>
+                    <td><a onClick="editCurrentItem(this)" tabindex="18">Edit</a>
+                        <a onClick="deleteCurrentItem(this)" tabindex="19">Delete</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Spark Plug</td>
+                    <td>19</td>
+                    <td>60</td>
+                    <td>Apex Parts</td>
+                    <td>6574894120</td>
+                    <td><a onClick="editCurrentItem(this)" tabindex="20">Edit</a>
+                        <a onClick="deleteCurrentItem(this)" tabindex="21">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="js/inventory.js"></script>
+
+    <footer>
+        <p><small>Copyright © 2022 | Designed by NIAGARA DIGITAL SOLUTIONS</small></p>
+    </footer>
+</body>
+</html>

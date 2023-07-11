@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sales</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="images/TeamLogo.png" alt="NDS Logo" class="iconDetails" tabindex="1">
+        </a>
+        <h1>Track Sales</h1>
+    </header>
+
+    <ul>
+        <li id="floatright"><a href="index.html" tabindex="4">Home</a></li>
+        <li><a href="Inventory.html" tabindex="2">Inventory</a></li>
+        <li><a href="Orders.html">Orders</a></li>
+        <li><a href="Suppliers.html">Suppliers</a></li>
+        <li><a href="Sales.html" class="active">Sales</a></li>
+        <li><a href="Customers.html">Customers</a></li>
+        <li><a href="Invoices.html">Invoices</a></li>
+    </ul>
+
+    <div class="addform" id="sleForm">
+        <h2>Now it's Easy to Track Sales</h2>
+        <form method="post" id="saleForm">
+            <fieldset>
+                <legend>Add Sale</legend>
+                <div>
+
+                    <select id="Item" name="Item"> 
+                        <option disabled selected value="default">Select Item:</option>
+                        <option value="Key">Key</option>
+                        <option value="Blade">Blade</option>
+                        <option value="Gear">Gear</option>
+                        <option value="Fuel Cap">Fuel Cap</option>
+                        <option value="Starter">Starter</option>
+                        <option value="Air Filter">Air Filter</option>
+                        <option value="Spark Plug">Spark Plug</option>
+                    </select>
+
+                    <div class="input-group">
+                        <input class="input" id="Quantity" name="Quantity" type="Number" min="1" required>
+                        <label class="placeholder" for="Quantity">Enter the Quantity per Package</label>
+                    </div>
+        
+                    <div class="input-group">
+                        <input class="input" id="UnitPrice" name="UnitPrice" type="Number" min="1" required>
+                        <label class="placeholder" for="UnitPrice">Enter the Unit Price:</label>
+                    </div>
+        
+                    <div class="input-group">
+                        <input class="input" id="Subtotal" name="Subtototal" type="Number" min="1" required>
+                        <label class="placeholder" for="Subtotal">Enter the Subtotal</label>
+                    </div>
+
+                </div>
+                <div class="btnmargin">
+                    <button type="submit" onclick="addSale()" title="Submit the data and close the form">Submit and Close</button>
+                    <button type="button" onclick="closeForm()" title="Close the form">Close</button>
+                    <button type="button" class="FillData" onclick="FillData()" title="Autofill data for demo">Fill Data</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="tableformat" id="saleTable">
+        <div class="headers">
+            <h2>Sales Details</h2>
+            <button class="openForm" onclick="openForm()" tabindex="6" title="Open Form to Add New Sale">Add Sale</button>
+        </div>
+        <input type="text" id="searchName" onkeyup="searchSale()" placeholder="Search by Item..." title="Enter Item" tabindex="7">
+        <table id="sale" class="format-table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Subtotal</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Blade</td>
+                    <td>10</td>
+                    <td>6</td>
+                    <td>60</td>
+                    <td><a onClick="editCurrentSale(this)" tabindex="8">Edit</a>
+                        <a onClick="deleteCurrentSale(this)" tabindex="9">Delete</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Gear</td>
+                    <td>5</td>
+                    <td>3</td>
+                    <td>15</td>
+                    <td><a onClick="editCurrentSale(this)" tabindex="10">Edit</a>
+                        <a onClick="deleteCurrentSale(this)" tabindex="11">Delete</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Fuel Cap</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td><a onClick="editCurrentSale(this)" tabindex="12">Edit</a>
+                        <a onClick="deleteCurrentSale(this)" tabindex="13">Delete</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Spark Plug</td>
+                    <td>6</td>
+                    <td>5</td>
+                    <td>30</td>
+                    <td><a onClick="editCurrentSale(this)" tabindex="14">Edit</a>
+                        <a onClick="deleteCurrentSale(this)" tabindex="15">Delete</a>
+                    </td>
+                </tr>
+            </tbody>    
+        </table>
+    </div>
+    <script src="js/sales.js"></script>
+    <footer>
+        <p><small>Copyright © 2022 | Designed by NIAGARA DIGITAL SOLUTIONS</small></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,540 @@
+body {
+    font-family: 'Karla', sans-serif;
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #31a0e3;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    text-align: center;
+    margin: 0;
+    height: 100px;
+    width: auto;
+}
+
+h1 {
+    font-family: 'Rubik', sans-serif;
+    vertical-align: middle;
+    line-height: 100px;
+    color: white;
+    margin-top: 0;
+    font-weight: 700;
+    font-size: 40px;
+}
+
+h2 {
+    font-family: 'Karla', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+h3 {
+    font-family: 'Karla', sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow:hidden;
+    background-color: #2f4daf;
+    border: 2px solid black;
+}
+
+li {
+    float: left;
+    border-right:1px solid black;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: black;
+}
+
+footer {
+    display: flex;
+    background-color: #31a0e3;
+    border: 2px solid black;
+    justify-content: center;
+    color: black;
+    font-size: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+fieldset {
+    padding: 30px;
+    width: 700px;
+    margin: 50px auto;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+legend {
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+}
+
+input {
+    display: block;
+    width: 98%;
+    height: 25px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px 5px;
+    font-family: 'Karla', sans-serif;
+    font-weight: 400;
+}
+         
+input[type="submit"] {
+    display: inline-block;
+    background: black;
+    color: white;
+    cursor: pointer;
+    width: 300px;
+    height: 30px;
+    border: 2px solid white;
+    border-radius: 30px;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    margin-right: 45px;
+    margin-left: 35px;
+    padding: 0;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+input[type="submit"]:hover {
+    background: white;
+    border-color: black;
+    color: black;
+}
+
+input[type="checkbox"] {
+    vertical-align: middle;
+}
+
+::-webkit-input-placeholder {
+    font-size: 15px;
+    font-family: 'Karla', sans-serif;
+    font-weight: 400;
+}
+
+button {
+    display: inline-block;
+    background: black;
+    color: white;
+    cursor: pointer;
+    width: 300px;
+    height: 30px;
+    border: 2px solid black;
+    border-radius: 30px;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 0;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+button:hover {
+   background: white;
+    border-color: black;
+    color: black;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: underline;
+    color: white;
+}
+
+select {
+    background: #fff;
+    border-radius: 10px;
+    display: block;
+    width: 100%;
+    margin-top: 6px;
+    margin-bottom: 15px;
+    height: 40px;
+}
+
+button:focus {
+    outline: 4px dashed white;
+}
+
+input:focus {
+    outline: 4px dashed white;
+}
+
+li:focus {
+    outline: 4px dashed white;
+}
+
+a:focus {
+    outline: 4px dashed white;
+}
+
+img:focus {
+    outline: 4px dashed white;
+}
+
+label:focus {
+    outline: 4px dashed white;
+}
+
+nav {
+    background-color: #2f4daf;
+    border: 2px solid black;
+    padding: 0;
+}
+
+/********** Class **********/ 
+.intro_section {
+    background-color: #435d7d;
+    border: 2px solid black;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    padding: 15px;
+    font-weight: 400;
+}
+
+.active {
+    background-color: black;
+}
+
+.iconDetails {
+    float:left;
+    margin-left: 25px;
+    height: 100px;
+    border-left: 2px solid black;
+    border-right: 2px solid black; 
+}
+
+.info_section {
+    background-color: #2f4daf;
+    background-size: cover;
+    font-family: 'Karla', sans-serif;
+    border: 2px solid black;
+    padding: 22px;
+    height: max-content;
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+
+.info_section h2 {
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.info_section p {
+    vertical-align: middle;
+    line-height: 40px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.addform {
+    display: none;
+    position: relative;
+    margin: 0;
+    padding: 15px;
+    background-color: #7089a8;
+    color: black;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    width: auto;
+}
+
+.format-table {
+    border-collapse: collapse;
+    margin: 0;
+    font-size: 20px;
+    font-family: 'Rubik', sans-serif;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 0 10px black;
+}
+
+.format-table thead tr {
+    background-color: #2f4daf;
+    color: white;
+    text-align: center;
+}
+
+.format-table th,
+.format-table td {
+    padding: 12px 15px;
+}
+
+.format-table tbody tr {
+    border-bottom: 1px solid white;
+}
+
+.format-table tbody tr:nth-of-type(even) {
+    background-color: black;
+}
+
+.format-table tbody tr:nth-of-type(odd) {
+    background-color: black;
+}
+
+.format-table tbody tr:last-of-type {
+    border-bottom: 2px solid #31a0e3;
+}
+
+.format-table tbody tr.active-row {
+    font-weight: bold;
+    color: #31a0e3;
+}
+
+.tableformat {
+    background-color: #31a0e3;
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    text-align: center; 
+    display: inline-block;
+}
+
+.openForm {
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.headers{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #435d7d;
+    color: #fff;
+    padding: 16px 30px;
+}
+
+.btnmargin {
+    margin-top: 20px;
+}
+
+.sectioncollapse {
+    background-color: #2f4daf;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 20px;
+}
+  
+.sectioncollapse:hover {
+    background-color: #31a0e3;
+}
+
+.content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #435d7d;
+    color: white;
+    border-radius: 30px;
+}
+
+.menu-label {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    margin: 0;
+    text-decoration: none;
+}
+
+.dropdown-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.menu-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+}
+
+.links,.links-hidden{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.links-hidden {
+    display: block;
+}
+
+.links {
+    display: inline-block;
+}
+
+.links-hidden:hover,.links:hover {
+    background-color: black;
+}
+
+.dropdown-menu:hover .menu-content {
+    display: block;
+}
+
+.dropdown-menu:hover .menu-label {
+    background-color: black;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input {
+    display: block;
+    width: 98%;
+    height: 25px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px 5px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    font-family: 'Karla', sans-serif;
+    font-weight: 400;
+}
+
+.placeholder
+{
+    position: absolute;
+    Bottom: 5px;
+    left: 8px;
+    font-size: 14px;
+    padding: 0px 5px;
+    color: #A9A9AC;
+    transition: 0.3s;
+    pointer-events: none;
+}
+.input:focus + .placeholder,
+.input:valid + .placeholder
+{
+    bottom: 44px;
+    color: black;
+    background-color: #7089a8;
+}
+
+.detail {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+  
+.detail-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+  
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.FillData{
+    display: inline;
+    margin-top: 15px;
+}
+
+/********** IDs **********/
+
+#whitelink {
+    color:white;
+}
+
+#blacklink {
+    color:black;
+}
+
+#bordertop {
+    border-top: 2px solid black;
+}
+
+#searchName {
+    margin-left: 8px;
+    font-size: 20px;
+}
+
+#searchPhone {
+    margin-left: 8px;
+    font-size: 20px;
+}
+
+#aligncenter {
+    text-align: center;
+}
+
+#floatright {
+    float: right;
+    border-left:1px solid black;
+}
+
+#btnAddSup {
+    margin-bottom: 35px;
+}
+
+#parts{
+    margin-bottom: 35px;
+}
+
+#Payment{
+    margin-bottom: 35px;   
+}
+

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Suppliers</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+   <header>
+        <a href="index.html">
+            <img src="images/TeamLogo.png" alt="NDS Logo" class="iconDetails" tabindex="1">
+        </a>
+        <h1>Manage Suppliers</h1>
+    </header>
+
+    <ul>
+        <li id="floatright"><a href="index.html" tabindex="4">Home</a></li>
+        <li><a href="Inventory.html" tabindex="2">Inventory</a></li>
+        <li><a href="Orders.html">Orders</a></li>
+        <li><a href="Suppliers.html" class="active">Suppliers</a></li>
+        <li><a href="Sales.html">Sales</a></li>
+        <li><a href="Customers.html">Customers</a></li>
+        <li><a href="Invoices.html">Invoices</a></li>
+    </ul>
+    
+    <div class="addform" id="suppForm">
+        <h2>Now it's Easy to add new suppliers in your list!!</h2>
+        <form method="post" id="supplierForm">
+            <fieldset>
+                <legend>Add Supplier</legend>
+                <div>
+                    <div class="input-group">
+                        <input class="input" type="text" id="name" name="name" required>
+                        <label class="placeholder" for="name">Enter the supplier's name for eg.(Jhonson Parts Co)</label>
+                    </div>
+
+                    <div class="input-group">
+                         <input class="input" type="text" id="items" name="items" required>                 
+                        <label class="placeholder" for="items">Enter the Inventory items name for eg.(Key,Blade,etc.")</label>
+                    </div>
+
+                    <div class="input-group">
+                        <input class="input"  type="text" id="address" name="address"  required>
+                        <label class="placeholder" for="address">Enter the supplier's adress for eg.(89,Bay View St,Welland)</label>
+                    </div>
+                </div>
+                <div class="btnmargin">
+                    <button type="submit" onclick="addSupplier()" title="Submit the data and close the form">Submit and Close</button>
+                    <button type="button" onclick="closeForm()" title="Close the form">Close</button>
+                    <button type="button" class="FillData" onclick="FillData()" title="Autofill data for demo">Fill Data</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    
+    <div class="tableformat" id="suppTable">
+        <div class="headers">
+            <h2>Supplier Details</h2>
+            <button class="openForm" onclick="openForm()" tabindex="6" title="Open Form to Add New Supplier">Add Supplier</button>
+        </div>
+        <input type="text" id="searchName" onkeyup="searchSupplier()" placeholder="Search by Supplier Name.." title="Enter Supplier Name" tabindex="7">
+        <table id="suppliers" class="format-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Items</th>
+                    <th>Address</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Aramco Co.</td>
+                    <td>Blade</td>
+                    <td>124 Abcd Ave.</td>
+                    <td><a onClick="editCurrentSupplier(this)" tabindex="8">Edit</a>
+                        <a onClick="deleteCurrentSupplier(this)" tabindex="9">Delete</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Jhonson Co.</td>
+                    <td>Key</td>
+                    <td>14 Black St.</td>
+                    <td><a onClick="editCurrentSupplier(this)" tabindex="10">Edit</a>
+                        <a onClick="deleteCurrentSupplier(this)" tabindex="11">Delete</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>MSC Hardwares</td>
+                    <td>Gear</td>
+                    <td>121 Green Ave.</td>
+                    <td><a onClick="editCurrentSupplier(this)" tabindex="12">Edit</a>
+                        <a onClick="deleteCurrentSupplier(this)" tabindex="13">Delete</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Matrix Parts</td>
+                    <td>Fuel Cap</td>
+                    <td>352 Fitch St.</td>
+                    <td><a onClick="editCurrentSupplier(this)" tabindex="14">Edit</a>
+                        <a onClick="deleteCurrentSupplier(this)" tabindex="15">Delete</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Charles Co.</td>
+                    <td>Starter</td>
+                    <td>65 Wood St.</td>
+                    <td><a onClick="editCurrentSupplier(this)" tabindex="16">Edit</a>
+                        <a onClick="deleteCurrentSupplier(this)" tabindex="17">Delete</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Keller Co.</td>
+                    <td>Air Filter</td>
+                    <td>22 Summit Ave.</td>
+                    <td><a onClick="editCurrentSupplier(this)" tabindex="18">Edit</a>
+                        <a onClick="deleteCurrentSupplier(this)" tabindex="19">Delete</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Apex Parts</td>
+                    <td>Spark Plug</td>
+                    <td>33 Stock St.</td>
+                    <td><a onClick="editCurrentSupplier(this)" tabindex="20">Edit</a>
+                        <a onClick="deleteCurrentSupplier(this)" tabindex="21">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="js/supplier.js"></script>
+    <footer>
+        <p><small>Copyright © 2022 | Designed by NIAGARA DIGITAL SOLUTIONS</small></p>
+    </footer>
+</body>
+</html>
