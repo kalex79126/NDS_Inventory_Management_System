@@ -11,7 +11,7 @@
 ## 4. ERD
 
    
- ![image](https://github.com/kalex79126/NDS_Inventory_Management_System/assets/122379584/60e7a5a1-9671-4fbf-8cb9-30a3882921d9)
+![image](https://github.com/kalex79126/NDS_Inventory_Management_System/assets/122379584/22243443-39f4-4304-a163-2d72b84a5e40)
      
 ## 5. Main Function
    The main function of this project is to track the inventory of Emma's small engines from the case study.
